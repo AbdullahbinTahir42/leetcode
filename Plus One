@@ -1,0 +1,21 @@
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        """
+        add one to the last element of an array and return new array
+        """
+        new_digit = 0
+        new_array = []
+        if len(digits) > 1:
+            for i in digits:
+                new_digit = new_digit * 10 + i
+        
+        else:
+            new_digit = digits[0]
+
+        new_digit += 1
+        while new_digit > 0:
+            num = new_digit % 10 
+            new_array.append(num)
+            new_digit = new_digit // 10
+
+        return new_array[::-1]
